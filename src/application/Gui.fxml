@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controlleur">
+<BorderPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="454.0" style="-fx-background-color: dimgrey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controlleur">
    <bottom>
       <VBox id="vboxMenu" prefHeight="101.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
@@ -78,23 +78,26 @@
       </VBox>
    </bottom>
    <center>
-      <Pane id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <StackPane prefHeight="150.0" prefWidth="200.0">
+            <StackPane prefHeight="246.0" prefWidth="416.0">
                <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
                   <ImageView fx:id="pic" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
                      </image>
                   </ImageView>
-                  <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
             </StackPane>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </BorderPane.margin>
       </Pane>
    </center>
    <top>
-      <Label id="labelTitre" text="Frame Magik" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label id="labelTitre" text="Frame Magik" textAlignment="CENTER" textFill="#f5f2f2" BorderPane.alignment="CENTER">
          <font>
             <Font size="29.0" />
          </font>
