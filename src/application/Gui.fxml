@@ -26,10 +26,15 @@
                <children>
                   <MenuButton id="buttonLayout" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="114.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_layout.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
                      <items>
-                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
-                          <content>
-                            <CheckBox text="Click Me" />
-                          </content>
+                        <CustomMenuItem id="menuItemLayout1" mnemonicParsing="false">
+                           <content>
+                              <Button id="button_Layout1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_1.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                           </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem id="menuItemLayout2" mnemonicParsing="false">
+                           <content>
+                              <Button id="button_Layout1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_2.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                           </content>
                         </CustomMenuItem>
                      </items>
                   </MenuButton>
@@ -42,7 +47,7 @@
                         </CustomMenuItem>
                      </items>
                   </MenuButton>
-                  <MenuButton id="buttonShape" layoutX="133.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_background.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
+                  <MenuButton id="buttonBackground" layoutX="133.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_background.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
                      <items>
                         <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
                            <content>
@@ -51,7 +56,7 @@
                         </CustomMenuItem>
                      </items>
                   </MenuButton>
-                  <MenuButton id="buttonShape" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
+                  <MenuButton id="buttonText" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
                      <items>
                         <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
                            <content>
