@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.CustomMenuItem?>
 <?import javafx.scene.control.MenuButton?>
@@ -8,26 +12,57 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controlleur">
-   <right>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <MenuButton mnemonicParsing="false" text="Layouts">
-               <items>
-                  <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
-                    <content>
-                      <CheckBox text="Click Me" />
-                    </content>
-                  </CustomMenuItem>
-               </items>
-            </MenuButton>
-         </children>
-      </VBox>
-   </right>
+<BorderPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controlleur">
    <center>
       <ImageView fx:id="pic" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
          </image></ImageView>
    </center>
+   <bottom>
+      <VBox prefHeight="101.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <MenuButton id="buttonLayout" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="114.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_layout.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
+                     <items>
+                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                          <content>
+                            <CheckBox text="Click Me" />
+                          </content>
+                        </CustomMenuItem>
+                     </items>
+                  </MenuButton>
+                  <MenuButton id="buttonShape" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="114.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_shape.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
+                     <items>
+                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                           <content>
+                              <CheckBox text="Click Me" />
+                           </content>
+                        </CustomMenuItem>
+                     </items>
+                  </MenuButton>
+                  <MenuButton id="buttonShape" layoutX="133.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_background.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
+                     <items>
+                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                           <content>
+                              <CheckBox text="Click Me" />
+                           </content>
+                        </CustomMenuItem>
+                     </items>
+                  </MenuButton>
+                  <MenuButton id="buttonShape" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
+                     <items>
+                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                           <content>
+                              <CheckBox text="Click Me" />
+                           </content>
+                        </CustomMenuItem>
+                     </items>
+                  </MenuButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>
