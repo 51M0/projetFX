@@ -49,6 +49,8 @@ public class Controlleur {
 	private Pane pane1_Layout1;
 	@FXML
 	private Pane pane2_Layout1;
+	@FXML
+	private Pane pane1_Layout2;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
