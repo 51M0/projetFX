@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.CustomMenuItem;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -27,6 +28,14 @@ public class Controlleur {
 	
 	@FXML
 	private ImageView pic;
+	@FXML
+	private Button _button_LayoutDef;
+	@FXML
+	private Button _button_Layout1;
+	@FXML
+	private Button _button_Layout2;
+	@FXML
+	private Button _button_Layout3;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -54,6 +63,7 @@ public class Controlleur {
 	
 		
 	}
+	
 	@FXML
 	private void initialize(){
 	
@@ -67,6 +77,20 @@ public class Controlleur {
 		
 		
 		}
+	
+	 
+	/**
+	 * appelée lors du clique sur un des layouts proposé dans le menu
+	 * @param e
+	 */
+	@FXML
+	public void changeLayout(ActionEvent e){
+		
+		Button clickedLayout = (Button) e.getSource();
+		System.out.println("change layout to "+clickedLayout.getId());
+		
+		}
+	
 	}
 
 
