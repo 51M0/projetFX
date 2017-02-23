@@ -80,16 +80,51 @@
    <center>
       <Pane id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <StackPane id="stackPaneDefault" prefHeight="246.0" prefWidth="416.0">
+            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" />
-                  <ImageView fx:id="pic" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                     </image>
-                  </ImageView>
+                  <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" prefHeight="246.0" prefWidth="416.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Rectangle id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <ImageView fx:id="pic" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
                </children>
-            </StackPane>
+            </Pane>
+            <Pane id="pane_Layout1" fx:id="pane1_Layout1" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="246.0" prefWidth="416.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Rectangle id="rectangle1Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <ImageView fx:id="pic1" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </Pane>
+            <Pane id="pane2_Layout1" fx:id="pane2_Layout1" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" prefHeight="246.0" prefWidth="416.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Rectangle id="rectangle2Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <ImageView fx:id="pic11" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </Pane>
          </children>
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" />

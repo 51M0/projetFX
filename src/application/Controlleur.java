@@ -16,6 +16,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 
@@ -36,6 +37,18 @@ public class Controlleur {
 	private Button _button_Layout2;
 	@FXML
 	private Button _button_Layout3;
+	@FXML
+	private StackPane stackPane_LayoutDef;
+	@FXML
+	private StackPane stackPane1_Layout1;
+	@FXML
+	private StackPane stackPane2_Layout1;
+	@FXML
+	private Pane pane_LayoutDef;
+	@FXML
+	private Pane pane1_Layout1;
+	@FXML
+	private Pane pane2_Layout1;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -66,7 +79,7 @@ public class Controlleur {
 	
 	@FXML
 	private void initialize(){
-	
+
 	}
 	
 	@FXML
@@ -87,8 +100,13 @@ public class Controlleur {
 	public void changeLayout(ActionEvent e){
 		
 		Button clickedLayout = (Button) e.getSource();
-		System.out.println("change layout to "+clickedLayout.getId());
+		System.out.println("change layout to "+clickedLayout.getId().substring(clickedLayout.getId().indexOf("_")+1));
+		String layoutName = clickedLayout.getId().substring(clickedLayout.getId().indexOf("_")+1);
 		
+		//test pour un cas
+		this.pane_LayoutDef.setVisible(false);
+		this.pane2_Layout1.setVisible(true);
+		this.pane1_Layout1.setVisible(true);
 		}
 	
 	}
