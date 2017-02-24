@@ -63,7 +63,7 @@
                         </CustomMenuItem>
                      </items>
                   </MenuButton>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                  <Button id="buttonText" fx:id="buttonChangeText" mnemonicParsing="false" onAction="#changeText" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                </children>
             </HBox>
          </children>
@@ -314,6 +314,27 @@
                         </StackPane>
                      </children>
                   </StackPane>
+               </children>
+            </Pane>
+            <Pane id="paneTextEdit" fx:id="paneTextEdit" opacity="0.78" prefHeight="245.0" prefWidth="392.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <TextField id="textEdit" fx:id="textEdit" layoutX="113.0" layoutY="26.0" text="Text">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></TextField>
+                  <Slider id="sliderTextSize" fx:id="sliderTextSize" blockIncrement="5.0" layoutX="72.0" layoutY="91.0" max="50.0" minorTickCount="0" onMouseClicked="#changeTextSize" prefHeight="15.0" prefWidth="115.0" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="7.0" />
+                     </padding>
+                  </Slider>
+                  <Label layoutX="14.0" layoutY="90.0" text="size:" textFill="#ed0935" />
+                  <ListView id="listViewFonts" layoutX="77.0" layoutY="123.0" prefHeight="115.0" prefWidth="105.0" />
+                  <Label layoutX="12.0" layoutY="123.0" text="fonts:" textFill="#ed0935" />
+                  <ColorPicker id="colorPickerText" fx:id="colorPickerText" layoutX="289.0" layoutY="85.0" onAction="#changeTextColor" />
+                  <Label layoutX="215.0" layoutY="90.0" text="color:" textFill="#ed0935" />
                </children>
             </Pane>
          </children>

@@ -10,9 +10,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.CustomMenuItem;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -51,6 +54,16 @@ public class Controlleur {
 	private Pane pane2_Layout1;
 	@FXML
 	private Pane pane1_Layout2;
+	@FXML 
+	private Button buttonChangeText;
+	@FXML
+	private Pane paneTextEdit;
+	@FXML
+	private TextField textEdit;
+	@FXML
+	private Slider sliderTextSize;
+	@FXML
+	private ColorPicker colorPickerText;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -110,6 +123,21 @@ public class Controlleur {
 		this.pane2_Layout1.setVisible(true);
 		this.pane1_Layout1.setVisible(true);
 		}
+	
+	@FXML
+	public void changeTextColor(ActionEvent e){
+
+	}
+	
+	@FXML
+	public void changeTextSize(MouseEvent e){
+		
+	}
+	
+	@FXML
+	public void changeText(ActionEvent e){
+		this.paneTextEdit.setVisible(true);
+	}
 	
 	}
 
