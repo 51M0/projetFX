@@ -3,9 +3,11 @@ package application;
 
 
 import java.io.File;
+import java.util.List;
 
 import javax.swing.JPopupMenu;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.CustomMenuItem;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -20,10 +24,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
 public class Controlleur {
+	
+	private int textSize=13;
+	private Color textColor=new Color(0, 0, 0, 0);
+	private List<String> listFontFamilies;
+	private String textFont;
 	
 	@FXML
 	private Pane root;
@@ -64,6 +75,10 @@ public class Controlleur {
 	private Slider sliderTextSize;
 	@FXML
 	private ColorPicker colorPickerText;
+	@FXML
+	private Button buttonAddText;
+	@FXML
+	private ListView listViewFonts;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -88,12 +103,17 @@ public class Controlleur {
 		}}
 	});
 	
+	this.listFontFamilies = javafx.scene.text.Font.getFamilies();
+	
 	
 		
 	}
 	
 	@FXML
 	private void initialize(){
+		for(String s : this.listFontFamilies){
+			this.listViewFonts.setItems(FXCollections.observableList(this.listFontFamilies));
+		}
 
 	}
 	
@@ -126,17 +146,40 @@ public class Controlleur {
 	
 	@FXML
 	public void changeTextColor(ActionEvent e){
-
+		this.textColor = this.colorPickerText.getValue();
 	}
 	
 	@FXML
 	public void changeTextSize(MouseEvent e){
-		
+		this.textSize = (int) this.sliderTextSize.getValue();
+	}
+	
+	@FXML
+	public void changeTextFont(MouseEvent e){
+		System.out.print("font changed !");
+		this.textFont = this.listViewFonts.getSelectionModel().getSelectedItem().toString();
 	}
 	
 	@FXML
 	public void changeText(ActionEvent e){
 		this.paneTextEdit.setVisible(true);
+	}
+	
+	@FXML
+	public void addText(ActionEvent e){
+		Label newLabel = new Label(this.textEdit.getText());
+		
+		newLabel.setStyle("-fx-font-size: "+this.textSize+"px;"); // mise à jour de la taille
+		
+		newLabel.setTextFill(this.textColor); // mise à jour de la couleur
+		
+		newLabel.setFont(Font.font(this.textFont));
+		
+		/******* A CHANGER : ajouter le label au cadre/StackPane COURANT layout def ou layout1, 2 ..... ) ****/
+		this.stackPane_LayoutDef.getChildren().add(newLabel);
+		this.pane_LayoutDef.setVisible(true);
+		this.paneTextEdit.setVisible(false);
+		/************************************/
 	}
 	
 	}

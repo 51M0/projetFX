@@ -72,7 +72,7 @@
    <center>
       <Pane id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="200.0" prefWidth="200.0" visible="false">
+            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" prefHeight="246.0" prefWidth="416.0">
                      <children>
@@ -220,7 +220,7 @@
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="pane1_Layout3" fx:id="pane1_Layout21" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0">
+            <Pane id="pane1_Layout3" fx:id="pane1_Layout21" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
                   <StackPane id="stackPane1Layout3" fx:id="stackPane2_Layout111" alignment="BOTTOM_LEFT" layoutX="-1.0" layoutY="-1.0" prefHeight="203.0" prefWidth="202.0">
                      <children>
@@ -318,23 +318,83 @@
             </Pane>
             <Pane id="paneTextEdit" fx:id="paneTextEdit" opacity="0.78" prefHeight="245.0" prefWidth="392.0" style="-fx-background-color: black;" visible="false">
                <children>
-                  <TextField id="textEdit" fx:id="textEdit" layoutX="113.0" layoutY="26.0" text="Text">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font></TextField>
-                  <Slider id="sliderTextSize" fx:id="sliderTextSize" blockIncrement="5.0" layoutX="72.0" layoutY="91.0" max="50.0" minorTickCount="0" onMouseClicked="#changeTextSize" prefHeight="15.0" prefWidth="115.0" showTickLabels="true" showTickMarks="true" snapToTicks="true">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="7.0" />
-                     </padding>
-                  </Slider>
-                  <Label layoutX="14.0" layoutY="90.0" text="size:" textFill="#ed0935" />
-                  <ListView id="listViewFonts" layoutX="77.0" layoutY="123.0" prefHeight="115.0" prefWidth="105.0" />
-                  <Label layoutX="12.0" layoutY="123.0" text="fonts:" textFill="#ed0935" />
-                  <ColorPicker id="colorPickerText" fx:id="colorPickerText" layoutX="289.0" layoutY="85.0" onAction="#changeTextColor" />
-                  <Label layoutX="215.0" layoutY="90.0" text="color:" textFill="#ed0935" />
+                  <VBox prefHeight="246.0" prefWidth="396.0">
+                     <children>
+                        <TextField id="textEdit" fx:id="textEdit" prefHeight="27.0" prefWidth="388.0" text="Text">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </Separator>
+                        <HBox prefHeight="165.0" prefWidth="396.0">
+                           <children>
+                              <VBox prefHeight="165.0" prefWidth="171.0">
+                                 <children>
+                                    <HBox prefHeight="39.0" prefWidth="171.0">
+                                       <children>
+                                          <Label text="size:" textFill="#ed0935">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Slider id="sliderTextSize" fx:id="sliderTextSize" blockIncrement="0.0" majorTickUnit="5.0" max="50.0" minorTickCount="0" onMouseClicked="#changeTextSize" prefHeight="15.0" prefWidth="115.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="15.0">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <padding>
+                                                <Insets top="7.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets top="3.0" />
+                                             </HBox.margin>
+                                          </Slider>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="128.0" prefWidth="171.0">
+                                       <children>
+                                          <Label text="fonts:" textFill="#ed0935">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ListView id="listViewFonts" fx:id="listViewFonts" onMouseClicked="#changeTextFont" prefHeight="111.0" prefWidth="129.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Separator>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="color:" textFill="#ed0935" />
+                                    <ColorPicker id="colorPickerText" fx:id="colorPickerText" onAction="#changeTextColor" />
+                                    <Button id="buttonAddText" fx:id="buttonAddText" alignment="CENTER" mnemonicParsing="false" onAction="#addText" text="Add !">
+                                       <VBox.margin>
+                                          <Insets left="40.0" top="90.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                </children>
             </Pane>
          </children>
