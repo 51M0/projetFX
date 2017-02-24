@@ -63,15 +63,7 @@
                         </CustomMenuItem>
                      </items>
                   </MenuButton>
-                  <MenuButton id="buttonText" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
-                     <items>
-                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
-                           <content>
-                              <CheckBox text="Click Me" />
-                           </content>
-                        </CustomMenuItem>
-                     </items>
-                  </MenuButton>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                </children>
             </HBox>
          </children>
