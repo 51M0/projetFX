@@ -56,7 +56,7 @@
                   </MenuButton>
                   <MenuButton id="buttonBackground" layoutX="133.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_background.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
                      <graphic>
-                        <ColorPicker promptText="Background" style="-fx-background-color: black;" />
+                        <ColorPicker id="colorPickerBG" fx:id="colorPickerBG" onAction="#changeBackgroundColor" promptText="Background" style="-fx-background-color: black;" />
                      </graphic>
                   </MenuButton>
                   <MenuButton id="buttonText" layoutX="238.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
@@ -74,7 +74,7 @@
       </VBox>
    </bottom>
    <center>
-      <Pane id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+      <Pane id="paneCadrePrincipalDefault" fx:id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>

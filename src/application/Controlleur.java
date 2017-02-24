@@ -9,14 +9,21 @@ import javax.swing.JPopupMenu;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.CustomMenuItem;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 
@@ -51,6 +58,10 @@ public class Controlleur {
 	private Pane pane2_Layout1;
 	@FXML
 	private Pane pane1_Layout2;
+	@FXML
+	private ColorPicker colorPickerBG;
+	@FXML
+	private Pane paneCadrePrincipalDefault;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -96,6 +107,7 @@ public class Controlleur {
 	 
 	/**
 	 * appelée lors du clique sur un des layouts proposé dans le menu
+	 * permet de changer l'agencement des cadres secondaires
 	 * @param e
 	 */
 	@FXML
@@ -109,6 +121,19 @@ public class Controlleur {
 		this.pane_LayoutDef.setVisible(false);
 		this.pane2_Layout1.setVisible(true);
 		this.pane1_Layout1.setVisible(true);
+		}
+	
+	/**
+	 * appelée lors du clique sur le color picker du menu
+	 * permet de changer la couleur de fond du cadre principal
+	 * @param e
+	 */
+	@FXML
+	public void changeBackgroundColor(ActionEvent e){
+		Paint fill = this.colorPickerBG.getValue();
+		BackgroundFill backgroundFill = new BackgroundFill(fill, CornerRadii.EMPTY, Insets.EMPTY);
+		Background background = new Background(backgroundFill);
+		this.paneCadrePrincipalDefault.setBackground(background);
 		}
 	
 	}
