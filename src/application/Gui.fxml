@@ -70,45 +70,37 @@
          <children>
             <Pane id="pane_Layout1" fx:id="pane_Layout1" prefHeight="242.0" prefWidth="419.0" visible="false">
                <children>
-                  <Pane id="pane_Layout1" fx:id="pane1_Layout1" prefHeight="242.0" prefWidth="414.0">
+                  <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="246.0" prefWidth="416.0">
                      <children>
-                        <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="246.0" prefWidth="416.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" />
-                              <Rectangle id="rectangle1Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                              <ImageView fx:id="pic1" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
+                        <Pane id="pane1_Layout1" fx:id="pane1_Layout1" prefHeight="200.0" prefWidth="200.0" />
+                        <Rectangle id="rectangle1Layout1" fx:id="rectangle1Layout1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="239.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
+                        <ImageView id="imageView1_Layout1" fx:id="imageView1_Layout1" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
-                  </Pane>
-                  <Pane id="pane2_Layout1" fx:id="pane2_Layout1" prefHeight="240.0" prefWidth="417.0">
+                  </StackPane>
+                  <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" prefHeight="246.0" prefWidth="416.0">
                      <children>
-                        <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" prefHeight="246.0" prefWidth="416.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" />
-                              <Rectangle id="rectangle2Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                              <ImageView fx:id="pic11" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </StackPane>
+                        <Pane id="pane1_Layout1" fx:id="pane2_Layout1" prefHeight="200.0" prefWidth="200.0" />
+                        <Rectangle id="rectangle2Layout1" fx:id="rectangle2Layout1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="240.0" stroke="BLACK" strokeType="INSIDE" width="176.0" />
+                        <ImageView id="imageView2_Layout1" fx:id="imageView2_Layout1" fitHeight="199.0" fitWidth="197.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
-                  </Pane>
+                  </StackPane>
                </children>
             </Pane>
-            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="242.0" prefWidth="415.0">
+            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="242.0" prefWidth="415.0" visible="false">
                <children>
                   <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" prefHeight="246.0" prefWidth="416.0">
                      <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" />
-                        <Rectangle id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                        <ImageView fx:id="pic" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                        <Pane id="pane1_LayoutDef" fx:id="pane1_LayoutDef" prefHeight="200.0" prefWidth="200.0" />
+                        <Rectangle id="rectangleLayoutDef" fx:id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <ImageView id="imageView1_LayoutDef" fx:id="imageView1_LayoutDef" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
                            </image>
@@ -117,182 +109,161 @@
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="pane1_Layout2" fx:id="pane1_Layout2" layoutX="107.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+            <Pane id="pane1_Layout2" fx:id="pane_Layout2" layoutX="107.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
-                  <StackPane id="stackPane1Layout2" fx:id="stackPane2_Layout11" alignment="BOTTOM_LEFT" layoutX="-1.0" layoutY="-1.0" prefHeight="203.0" prefWidth="202.0">
+                  <StackPane id="stackPane1_Layout2" fx:id="stackPane1_Layout2" alignment="BOTTOM_LEFT" layoutY="70.0" prefHeight="130.0" prefWidth="100.0">
                      <children>
-                        <Pane id="pane2Layout2" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Pane id="pane2_Layout2" fx:id="pane1_Layout21" layoutX="1.0" layoutY="2.0" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout111" alignment="BOTTOM_LEFT" layoutX="99.0" layoutY="-1.0" prefHeight="203.0" prefWidth="202.0">
-                                       <children>
-                                          <Pane prefHeight="200.0" prefWidth="200.0">
-                                             <children>
-                                                <Pane prefHeight="200.0" prefWidth="200.0" />
-                                             </children>
-                                          </Pane>
-                                          <Polygon id="polyPane2Layout2" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
-                                             <points>
-												<Double fx:value="-50.0" />
-												<Double fx:value="30.0" />
-												
-												<Double fx:value="50.0" />
-												<Double fx:value="30.0" />
-												
-												<Double fx:value="50.0" />
-												<Double fx:value="-30.0" />
-												
-												<Double fx:value="0.0" />
-												<Double fx:value="0.0" />
-												
-												<Double fx:value="-50.0" />
-												<Double fx:value="-30.0" />
-                                             </points>
-                                          </Polygon>
-                                          <ImageView fx:id="pic1111" fitHeight="87.0" fitWidth="72.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
-                                             <image>
-                                                <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </Pane>
-                           </children></Pane>
-                        <Polygon id="polyPane1Layout2" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+                        <Pane id="pane1_Layout2" fx:id="pane1_Layout2" prefHeight="200.0" prefWidth="200.0" />
+                        <Polygon id="polyBasGaucheLayout2" fx:id="polyBasGaucheLayout2" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
                           <points>
-								<Double fx:value="-50.0" />
-								<Double fx:value="30.0" />
-							
-      								<Double fx:value="50.0" />
-								<Double fx:value="30.0" />
-							
-      								<Double fx:value="50.0" />
-								<Double fx:value="-30.0" />
-							
-      								<Double fx:value="0.0" />
-								<Double fx:value="-60.0" />
-							
       								<Double fx:value="-50.0" />
-								<Double fx:value="-30.0" />
+      								<Double fx:value="30.0" />
+      							
+      								<Double fx:value="50.0" />
+      								<Double fx:value="30.0" />
+      							
+      								<Double fx:value="50.0" />
+      								<Double fx:value="-70.0" />
+      							
+      								<Double fx:value="0.0" />
+      								<Double fx:value="-100.0" />
+      							
+      								<Double fx:value="-50.0" />
+      								<Double fx:value="-70.0" />
                           </points>
                         </Polygon>
-                        <ImageView fx:id="pic111" fitHeight="87.0" fitWidth="72.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
+                        <ImageView id="imageView1_Layout2" fx:id="imageView1_Layout2" fitHeight="104.0" fitWidth="86.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
                               <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
                            </image>
                         </ImageView>
-                        <StackPane prefHeight="150.0" prefWidth="200.0">
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" />
-                              <Polygon id="polyPane3Layout2" fill="DODGERBLUE" stroke="BLACK" strokeType="INSIDE">
-                                <points>
-                                		<Double fx:value="-150.0" />
-																	<Double fx:value="-30.0" />
-																		
-                                    																	<Double fx:value="-50.0" />
-																	<Double fx:value="-30.0" />																	
-																																												
-																	<Double fx:value="50.0" />
-																	<Double fx:value="-30.0" />
-																																		
-                                    																	<Double fx:value="50.0" />
-																	<Double fx:value="30.0" />														
-																	
-																	<Double fx:value="0.0" />
-																	<Double fx:value="60.0" />		
-																	
-																	<Double fx:value="-50.0" />
-																	<Double fx:value="30.0" />	
-																	
-																	<Double fx:value="-100.0" />
-																	<Double fx:value="0.0" />
-																	
-                                    																	<Double fx:value="-150.0" />
-																	<Double fx:value="30.0" />																										
-                                </points>
-                              </Polygon>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                           </children>
-                        </StackPane>
+                     </children>
+                  </StackPane>
+                  <StackPane id="stackPane2_Layout2" fx:id="stackPane2_Layout2" alignment="TOP_LEFT" prefHeight="92.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="pane2_Layout2" fx:id="pane2_Layout2" prefHeight="110.0" prefWidth="200.0" />
+                        <Polygon id="polyHautLayout2" fx:id="polyHautLayout2" fill="DODGERBLUE" stroke="BLACK" strokeType="INSIDE">
+                          <points>
+                          		<Double fx:value="-150.0" />
+								<Double fx:value="-30.0" />
+								<Double fx:value="-50.0" />
+								<Double fx:value="-30.0" />																	
+								<Double fx:value="50.0" />
+								<Double fx:value="-30.0" />
+								<Double fx:value="50.0" />
+								<Double fx:value="70.0" />														
+								<Double fx:value="0.0" />
+								<Double fx:value="100.0" />		
+								<Double fx:value="-50.0" />
+								<Double fx:value="70.0" />	
+								<Double fx:value="-100.0" />
+								<Double fx:value="40.0" />
+								<Double fx:value="-150.0" />
+								<Double fx:value="70.0" />																										
+                          </points>
+                        </Polygon>
+                        <ImageView id="imageView2_Layout2" fx:id="imageView2_Layout2" fitHeight="69.0" fitWidth="200.0" onMouseClicked="#clicked" pickOnBounds="true" />
+                     </children>
+                  </StackPane>
+                  <StackPane id="stackPane3_Layout2" fx:id="stackPane3_Layout2" alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane id="pane3_Layout2" fx:id="pane3_Layout2" prefHeight="200.0" prefWidth="200.0" />
+                        <Polygon id="polyBasDroitLayout2" fx:id="polyBasDroitLayout2" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+                           <points>
+												<Double fx:value="-50.0" />
+												<Double fx:value="30.0" />
+												
+												<Double fx:value="50.0" />
+												<Double fx:value="30.0" />
+												
+												<Double fx:value="50.0" />
+												<Double fx:value="-70.0" />
+												
+												<Double fx:value="0.0" />
+												<Double fx:value="-40.0" />
+												
+												<Double fx:value="-50.0" />
+												<Double fx:value="-70.0" />
+                           </points>
+                        </Polygon>
+                        <ImageView id="imageView3_Layout2" fx:id="imageView3_Layout2" fitHeight="70.0" fitWidth="100.0" onMouseClicked="#clicked" pickOnBounds="true" visible="false">
+                           <image>
+                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="pane1_Layout3" fx:id="pane_Layout3" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+            <Pane id="pane_Layout3" fx:id="pane_Layout3" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <StackPane id="stackPane1Layout3" fx:id="stackPane2_Layout111" alignment="BOTTOM_LEFT" layoutX="-1.0" layoutY="-1.0" prefHeight="203.0" prefWidth="202.0">
-                     <children>
-                        <Pane id="pane2Layout3" prefHeight="200.0" prefWidth="200.0">
+                  <BorderPane id="borderPane_Layout3" fx:id="borderPane_Layout3" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
+                     <bottom>
+                        <StackPane fx:id="stackPane5_Layout3" alignment="BOTTOM_CENTER" prefHeight="69.0" prefWidth="142.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane id="pane2_Layout2" fx:id="pane1_Layout211" layoutX="1.0" layoutY="2.0" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1111" alignment="BOTTOM_LEFT" layoutX="99.0" layoutY="-1.0" prefHeight="203.0" prefWidth="202.0">
-                                       <children>
-                                          <Pane prefHeight="200.0" prefWidth="200.0">
-                                             <children>
-                                                <Pane prefHeight="200.0" prefWidth="200.0">
-                                                   <children>
-                                                      <Polygon id="trapezBasLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
-                                                         <points>
-                                    						<Double fx:value="0.0" />
-                                    						<Double fx:value="-30.0" />
-                                    						<Double fx:value="60.0" />
-                                    						<Double fx:value="-30.0" />
-                                    						<Double fx:value="110.0" />
-                                    						<Double fx:value="60.0" />
-                                    						<Double fx:value="-50.0" />
-                                    						<Double fx:value="60.0" />
-                                                         </points>
-                                                      </Polygon>
-                                                   </children></Pane>
-                                             </children>
-                                          </Pane>
-                                          <Polygon id="trapezDroitLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
-                                             <points>
-                              					<Double fx:value="0.0" />
-                              					<Double fx:value="-30.0" />
-                              					<Double fx:value="0.0" />
-                              					<Double fx:value="30.0" />
-                              					<Double fx:value="50.0" />
-                              					<Double fx:value="60.0" />
-                              					<Double fx:value="50.0" />
-                              					<Double fx:value="-60.0" />
-                                             </points>
-                                          </Polygon>
-                                          <ImageView fx:id="pic11111" fitHeight="87.0" fitWidth="72.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
-                                             <image>
-                                                <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </Pane>
+                              <Pane id="pane5_Layout3" fx:id="pane5_Layout3" prefHeight="35.0" prefWidth="119.0" />
+                              <Polygon id="trapezeBasLayout3" fx:id="trapezeBasLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+                                 <points>
+            						<Double fx:value="0.0" />
+            						<Double fx:value="-30.0" />
+            						<Double fx:value="60.0" />
+            						<Double fx:value="-30.0" />
+            						<Double fx:value="110.0" />
+            						<Double fx:value="60.0" />
+            						<Double fx:value="-50.0" />
+            						<Double fx:value="60.0" />
+                                 </points>
+                              </Polygon>
+                              <ImageView id="imageView5_Layout3" fx:id="imageView5_Layout3" fitHeight="84.0" fitWidth="71.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                                 </image>
+                              </ImageView>
                            </children>
-                        </Pane>
-                        <Polygon id="trapezGaucheLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
-                           <points>
-                              <Double fx:value="0.0" />
-                              <Double fx:value="-60.0" />
-                              <Double fx:value="0.0" />
-                              <Double fx:value="0.0" />
-                              <Double fx:value="-50.0" />
-                              <Double fx:value="60.0" />
-                              <Double fx:value="-50.0" />
-                              <Double fx:value="-90.0" />
-                           </points>
-                        </Polygon>
-                        <ImageView fx:id="pic1111" fitHeight="87.0" fitWidth="72.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                           </image>
-                        </ImageView>
-                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                        </StackPane>
+                     </bottom>
+                     <left>
+                        <StackPane id="stackPane1Layout3" fx:id="stackPane2_Layout3" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="58.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" />
-                              <Polygon id="trapezHautLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+                              <Pane id="pane2_Layout3" fx:id="pane2_Layout3" prefHeight="200.0" prefWidth="200.0" />
+                              <Polygon id="trapezeGaucheLayout3" fx:id="trapezeGaucheLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+                                 <points>
+                                    <Double fx:value="0.0" />
+                                    <Double fx:value="-60.0" />
+                                    <Double fx:value="0.0" />
+                                    <Double fx:value="0.0" />
+                                    <Double fx:value="-50.0" />
+                                    <Double fx:value="60.0" />
+                                    <Double fx:value="-50.0" />
+                                    <Double fx:value="-90.0" />
+                                 </points>
+                              </Polygon>
+                              <ImageView id="imageView2_Layout3" fx:id="imageView2_Layout3" fitHeight="99.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </left>
+                     <center>
+                        <StackPane fx:id="stackPane3_Layout3" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane id="pane3_Layout3" fx:id="pane3_Layout3" prefHeight="200.0" prefWidth="200.0" />
+                              <Rectangle id="carreCentreLayout3" fx:id="carreCentreLayout3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="92.0" stroke="BLACK" strokeType="INSIDE" width="92.0" />
+                              <ImageView id="imageView3_Layout3" fx:id="imageView3_Layout3" fitHeight="87.0" fitWidth="72.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </center>
+                     <top>
+                        <StackPane id="stackPane1_Layout3" fx:id="stackPane1_Layout3" alignment="TOP_CENTER" prefHeight="67.0" prefWidth="195.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane id="pane1_Layout3" fx:id="pane1_Layout3" prefHeight="51.0" prefWidth="200.0" />
+                              <Polygon id="trapezeHautLayout3" fx:id="trapezeHautLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
                                  <points>
                                     <Double fx:value="0.0" />
                                     <Double fx:value="-30.0" />
@@ -304,16 +275,35 @@
                                     <Double fx:value="-60.0" />
                                  </points>
                               </Polygon>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                              <StackPane prefHeight="150.0" prefWidth="200.0">
-                                 <children>
-                                    <Rectangle id="carreLayout3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="92.0" stroke="BLACK" strokeType="INSIDE" width="92.0" />
-                                 </children>
-                              </StackPane>
+                              <ImageView id="imageView1_Layout3" fx:id="imageView1_Layout3" fitHeight="30.0" fitWidth="95.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
-                     </children>
-                  </StackPane>
+                     </top>
+                     <right>
+                        <StackPane fx:id="stackPane4_Layout3" alignment="CENTER_RIGHT" prefHeight="118.0" prefWidth="61.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane id="pane4_Layout3" fx:id="pane4_Layout3" prefHeight="200.0" prefWidth="200.0" />
+                              <Polygon id="trapezeDroitLayout3" fx:id="trapezeDroiteLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
+                                 <points>
+                  					<Double fx:value="0.0" />
+                  					<Double fx:value="-30.0" />
+                  					<Double fx:value="0.0" />
+                  					<Double fx:value="30.0" />
+                  					<Double fx:value="50.0" />
+                  					<Double fx:value="60.0" />
+                  					<Double fx:value="50.0" />
+                  					<Double fx:value="-60.0" />
+                                 </points>
+                              </Polygon>
+                              <ImageView id="imageView4_Layout3" fx:id="imageView4_Layout3" fitHeight="87.0" fitWidth="53.0" layoutX="10.0" layoutY="27.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </right>
+                  </BorderPane>
                </children>
             </Pane>
             <Pane id="paneTextEdit" fx:id="paneTextEdit" opacity="0.78" prefHeight="245.0" prefWidth="416.0" style="-fx-background-color: black;" visible="false">

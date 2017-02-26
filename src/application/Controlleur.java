@@ -30,11 +30,13 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
@@ -51,8 +53,8 @@ public class Controlleur {
 	
 	@FXML
 	private Pane root;
-	private ContextMenu menuPic;
-	private MenuItem loadPicture;
+	//private ContextMenu menuPic;
+	//private MenuItem loadPicture;
 	
 	@FXML
 	private ImageView pic;
@@ -77,8 +79,6 @@ public class Controlleur {
 	@FXML
 	private Pane pane2_Layout1;
 	@FXML
-	private Pane pane1_Layout2;
-	@FXML
 	private Pane pane_Layout3;
 	
 
@@ -95,7 +95,7 @@ public class Controlleur {
 	@FXML
 	private Button buttonAddText;
 	@FXML
-	private ListView listViewFonts;
+	private ListView<String> listViewFonts;
 	@FXML
 	private FileChooser fileChooser;
 	@FXML
@@ -106,8 +106,91 @@ public class Controlleur {
 	private Pane paneCadrePrincipalDefault;
 	@FXML
 	private Pane pane_Layout1;
+	@FXML
+	private Rectangle rectangleLayoutDef;
+	@FXML
+	private Rectangle rectangle1Layout1;
+	@FXML
+	private Rectangle rectangle2Layout1;
+	@FXML
+	private Polygon polyBasGaucheLayout2;
+	@FXML
+	private Polygon polyHautLayout2;
+	@FXML
+	private Polygon polyBasDroitLayout2;
+	@FXML
+	private Polygon trapezeGaucheLayout3;
+	@FXML
+	private Polygon trapezeHautLayout3;
+	@FXML
+	private Polygon trapezeBasLayout3;
+	@FXML
+	private Polygon trapezeDroiteLayout3;
+	@FXML
+	private Rectangle carreCentreLayout3;
+	@FXML
+	private StackPane stackPane1_Layout2;
+	@FXML
+	private StackPane stackPane2_Layout2;
+	@FXML
+	private StackPane stackPane3_Layout2;
+	@FXML
+	private BorderPane borderPane_Layout3;
+	@FXML
+	private StackPane stackPane1_Layout3;
+	@FXML
+	private StackPane stackPane2_Layout3;
+	@FXML
+	private StackPane stackPane3_Layout3;
+	@FXML
+	private StackPane stackPane4_Layout3;
+	@FXML
+	private StackPane stackPane5_Layout3;
+	@FXML
+	private ImageView imageView1_Layout1;
+	@FXML
+	private ImageView imageView2_Layout1;
+	@FXML
+	private Pane pane1_LayoutDef;
+	@FXML
+	private ImageView imageView1_LayoutDef;
+	@FXML
+	private ImageView imageView1_Layout2;
+	@FXML
+	private Pane pane_Layout2;
+	@FXML
+	private Pane pane1_Layout2;
+	@FXML
+	private Pane pane2_Layout2;
+	@FXML
+	private ImageView imageView2_Layout2;
+	@FXML
+	private Pane pane3_Layout2;
+	@FXML
+	private ImageView imageView3_Layout2;
+	@FXML
+	private Pane pane1_Layout3;
+	@FXML
+	private Pane pane2_Layout3;
+	@FXML
+	private Pane pane3_Layout3;
+	@FXML
+	private Pane pane4_Layout3;
+	@FXML
+	private Pane pane5_Layout3;
+	@FXML 
+	private ImageView imageView1_Layout3;
+	@FXML 
+	private ImageView imageView2_Layout3;
+	@FXML 
+	private ImageView imageView3_Layout3;
+	@FXML 
+	private ImageView imageView4_Layout3;
+	@FXML 
+	private ImageView imageView5_Layout3;
 	
 	public Controlleur(){		
+		/*
 		menuPic=new ContextMenu();
 		loadPicture= new MenuItem("Load Picture");
 	menuPic.getItems().add(loadPicture);
@@ -129,7 +212,7 @@ public class Controlleur {
 	            try {
 	                BufferedImage bufferedImage = ImageIO.read(file);
 	                Image image = SwingFXUtils.toFXImage(bufferedImage, null);
-	                pic.setImage(image);
+	                pic.setImage(image);  
 	            } catch (IOException ex) {
 	     
 	            }
@@ -137,11 +220,10 @@ public class Controlleur {
 		}}
 	});
 	
-	this.listFontFamilies = javafx.scene.text.Font.getFamilies();
-	
-	
-		
+	*/
+		this.listFontFamilies = javafx.scene.text.Font.getFamilies();
 	}
+	
 	
 	@FXML
 	public void save (ActionEvent event){
@@ -169,9 +251,13 @@ public class Controlleur {
 		/***** A CHANGER to cadre principal ****/
 		this.stackPane_LayoutDef.getChildren().add(newLabel);
 		/*********************/
+		
 		for(String s : this.listFontFamilies){
 			this.listViewFonts.setItems(FXCollections.observableList(this.listFontFamilies));
 		}
+		
+		
+		
 
 	}
 	
@@ -188,7 +274,7 @@ public class Controlleur {
 	
 	@FXML
 	public void clicked (MouseEvent e){
-		
+		System.out.print("ImageView clicked !");
 		 fileChooser= new FileChooser(); 
 			if (fileChooser!= null){
 			fileChooser.setTitle("Open Resource File");
@@ -211,15 +297,8 @@ public class Controlleur {
 	 }
 	 }
 	
-	 
-	/**
-	 * appelée lors du clique sur un des layouts proposé dans le menu
-	 * permet de changer l'agencement des cadres secondaires
-	 * @param e
-	 */
+	/*
 	@FXML
-	public void changeLayout(ActionEvent e){
-		/**** A CHANGER : mettre une methode par layout *******/
 		
 		Button clickedLayout = (Button) e.getSource();
 		System.out.println("change layout to "+clickedLayout.getId().substring(clickedLayout.getId().indexOf("_")+1));
@@ -230,6 +309,7 @@ public class Controlleur {
 		this.pane2_Layout1.setVisible(true);
 		this.pane1_Layout1.setVisible(true);
 		}
+*/
 	
 	@FXML
 	public void changeTextColor(ActionEvent e){
@@ -323,7 +403,7 @@ public class Controlleur {
 	public void displayLayoutDefault(ActionEvent e){
 		this.pane_LayoutDef.setVisible(true);
 		this.pane_Layout1.setVisible(false);
-		this.pane1_Layout2.setVisible(false);
+		this.pane_Layout2.setVisible(false);
 		this.pane_Layout3.setVisible(false);
 	}
 	
@@ -331,7 +411,7 @@ public class Controlleur {
 	public void displayLayout1(ActionEvent e){
 		this.pane_LayoutDef.setVisible(false);
 		this.pane_Layout1.setVisible(true);
-		this.pane1_Layout2.setVisible(false);
+		this.pane_Layout2.setVisible(false);
 		this.pane_Layout3.setVisible(false);
 	}
 	
@@ -339,7 +419,7 @@ public class Controlleur {
 	public void displayLayout2(ActionEvent e){
 		this.pane_LayoutDef.setVisible(false);
 		this.pane_Layout1.setVisible(false);
-		this.pane1_Layout2.setVisible(true);
+		this.pane_Layout2.setVisible(true);
 		this.pane_Layout3.setVisible(false);
 	}
 	
@@ -347,7 +427,7 @@ public class Controlleur {
 	public void displayLayout3(ActionEvent e){
 		this.pane_LayoutDef.setVisible(false);
 		this.pane_Layout1.setVisible(false);
-		this.pane1_Layout2.setVisible(false);
+		this.pane_Layout2.setVisible(false);
 		this.pane_Layout3.setVisible(true);
 	}
 	
