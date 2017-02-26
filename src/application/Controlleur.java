@@ -50,6 +50,7 @@ public class Controlleur {
 	private double positionTextX,positionTextapresdropX=0;
 	private double positionTextY,positionTextapresdropY=0;
 	private Label newLabel= new Label();
+	private Pane currentPane;
 	
 	@FXML
 	private Pane root;
@@ -250,17 +251,13 @@ public class Controlleur {
 	
 	@FXML
 	private void initialize(){
-		/***** A CHANGER to cadre principal ****/
-		this.stackPane_LayoutDef.getChildren().add(newLabel);
-		/*********************/
+		this.currentPane = this.pane_LayoutDef;
+		
+		this.paneCadrePrincipalDefault.getChildren().add(newLabel);
 		
 		for(String s : this.listFontFamilies){
 			this.listViewFonts.setItems(FXCollections.observableList(this.listFontFamilies));
 		}
-		
-		
-		
-
 	}
 	
 	/*
@@ -345,11 +342,9 @@ public class Controlleur {
 		
 		newLabel.setFont(Font.font(this.textFont));
 		
-		/******* A CHANGER : ajouter le label au cadre/StackPane COURANT layout def ou layout1, 2 ..... ) ****/
-		//this.stackPane_LayoutDef.getChildren().add(newLabel);
-		this.pane_LayoutDef.setVisible(true);
+		this.currentPane.setVisible(true);
 		this.paneTextEdit.setVisible(false);
-		/************************************/
+
 		newLabel.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
@@ -403,7 +398,9 @@ public class Controlleur {
 	
 	@FXML
 	public void displayLayoutDefault(ActionEvent e){
-		this.pane_LayoutDef.setVisible(true);
+		this.currentPane = this.pane_LayoutDef;
+		
+		this.pane_LayoutDef.setVisible(true);	
 		this.pane_Layout1.setVisible(false);
 		this.pane_Layout2.setVisible(false);
 		this.pane_Layout3.setVisible(false);
@@ -411,6 +408,8 @@ public class Controlleur {
 	
 	@FXML
 	public void displayLayout1(ActionEvent e){
+		this.currentPane = this.pane_Layout1;
+		
 		this.pane_LayoutDef.setVisible(false);
 		this.pane_Layout1.setVisible(true);
 		this.pane_Layout2.setVisible(false);
@@ -419,6 +418,8 @@ public class Controlleur {
 	
 	@FXML
 	public void displayLayout2(ActionEvent e){
+		this.currentPane = this.pane1_Layout2;
+		
 		this.pane_LayoutDef.setVisible(false);
 		this.pane_Layout1.setVisible(false);
 		this.pane_Layout2.setVisible(true);
@@ -427,6 +428,8 @@ public class Controlleur {
 	
 	@FXML
 	public void displayLayout3(ActionEvent e){
+		this.currentPane = this.pane1_Layout3;
+		
 		this.pane_LayoutDef.setVisible(false);
 		this.pane_Layout1.setVisible(false);
 		this.pane_Layout2.setVisible(false);
