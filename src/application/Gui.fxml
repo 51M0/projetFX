@@ -204,13 +204,17 @@
                               <Pane id="pane5_Layout3" fx:id="pane5_Layout3" prefHeight="35.0" prefWidth="119.0" />
                               <Polygon id="trapezeBasLayout3" fx:id="trapezeBasLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
                                  <points>
-            						<Double fx:value="0.0" />
-            						<Double fx:value="-30.0" />
+                                 	<!-- point haut gauche -->
+            						<Double fx:value="-35.0" />
+            						<Double fx:value="-8.0" />
+            						<!-- point haut droit -->
+            						<Double fx:value="35.0" />
+            						<Double fx:value="-8.0" />
+            						<!-- point bas droit -->
+            						<Double fx:value="100.0" />
             						<Double fx:value="60.0" />
-            						<Double fx:value="-30.0" />
-            						<Double fx:value="110.0" />
-            						<Double fx:value="60.0" />
-            						<Double fx:value="-50.0" />
+            						<!-- point bas gauche -->
+            						<Double fx:value="-100.0" />
             						<Double fx:value="60.0" />
                                  </points>
                               </Polygon>
@@ -223,17 +227,21 @@
                         </StackPane>
                      </bottom>
                      <left>
-                        <StackPane id="stackPane1Layout3" fx:id="stackPane2_Layout3" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="58.0" BorderPane.alignment="CENTER">
+                        <StackPane id="stackPane1Layout3" fx:id="stackPane2_Layout3" alignment="CENTER_LEFT" prefHeight="172.0" prefWidth="70.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane id="pane2_Layout3" fx:id="pane2_Layout3" prefHeight="200.0" prefWidth="200.0" />
+                              <Pane id="pane2_Layout3" fx:id="pane2_Layout3" prefHeight="173.0" prefWidth="71.0" />
                               <Polygon id="trapezeGaucheLayout3" fx:id="trapezeGaucheLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
                                  <points>
-                                    <Double fx:value="0.0" />
-                                    <Double fx:value="-60.0" />
-                                    <Double fx:value="0.0" />
-                                    <Double fx:value="0.0" />
+                                 	<!-- point haut gauche -->
+                                    <Double fx:value="15.0" />
+                                    <Double fx:value="-35.0" />
+                                    <!-- point haut droit -->
+                                    <Double fx:value="15.0" />
+                                    <Double fx:value="35.0" />
+                                    <!-- point bas droit -->
                                     <Double fx:value="-50.0" />
-                                    <Double fx:value="60.0" />
+                                    <Double fx:value="90.0" />
+                                    <!-- point bas gauche -->
                                     <Double fx:value="-50.0" />
                                     <Double fx:value="-90.0" />
                                  </points>
@@ -250,7 +258,7 @@
                         <StackPane fx:id="stackPane3_Layout3" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <children>
                               <Pane id="pane3_Layout3" fx:id="pane3_Layout3" prefHeight="200.0" prefWidth="200.0" />
-                              <Rectangle id="carreCentreLayout3" fx:id="carreCentreLayout3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="92.0" stroke="BLACK" strokeType="INSIDE" width="92.0" />
+                              <Rectangle id="carreCentreLayout3" fx:id="carreCentreLayout3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="77.0" stroke="BLACK" strokeType="INSIDE" width="77.0" />
                               <ImageView id="imageView3_Layout3" fx:id="imageView3_Layout3" fitHeight="87.0" fitWidth="72.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
                                  <image>
                                     <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
@@ -265,17 +273,17 @@
                               <Pane id="pane1_Layout3" fx:id="pane1_Layout3" prefHeight="51.0" prefWidth="200.0" />
                               <Polygon id="trapezeHautLayout3" fx:id="trapezeHautLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
                                  <points>
-                                    <Double fx:value="0.0" />
-                                    <Double fx:value="-30.0" />
-                                    <Double fx:value="60.0" />
-                                    <Double fx:value="-30.0" />
-                                    <Double fx:value="110.0" />
+                                    <Double fx:value="-35.0" />
+                                    <Double fx:value="-10.0" />
+                                    <Double fx:value="35.0" />
+                                    <Double fx:value="-10.0" />
+                                    <Double fx:value="100.0" />
                                     <Double fx:value="-60.0" />
-                                    <Double fx:value="-50.0" />
+                                    <Double fx:value="-100.0" />
                                     <Double fx:value="-60.0" />
                                  </points>
                               </Polygon>
-                              <ImageView id="imageView1_Layout3" fx:id="imageView1_Layout3" fitHeight="30.0" fitWidth="95.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView id="imageView1_Layout3" fx:id="imageView1_Layout3" fitHeight="42.0" fitWidth="112.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                      </top>
@@ -285,14 +293,14 @@
                               <Pane id="pane4_Layout3" fx:id="pane4_Layout3" prefHeight="200.0" prefWidth="200.0" />
                               <Polygon id="trapezeDroitLayout3" fx:id="trapezeDroiteLayout3" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
                                  <points>
-                  					<Double fx:value="0.0" />
-                  					<Double fx:value="-30.0" />
-                  					<Double fx:value="0.0" />
-                  					<Double fx:value="30.0" />
+                  					<Double fx:value="-6.0" />
+                  					<Double fx:value="-35.0" />
+                  					<Double fx:value="-6.0" />
+                  					<Double fx:value="35.0" />
                   					<Double fx:value="50.0" />
-                  					<Double fx:value="60.0" />
+                  					<Double fx:value="90.0" />
                   					<Double fx:value="50.0" />
-                  					<Double fx:value="-60.0" />
+                  					<Double fx:value="-90.0" />
                                  </points>
                               </Polygon>
                               <ImageView id="imageView4_Layout3" fx:id="imageView4_Layout3" fitHeight="87.0" fitWidth="53.0" layoutX="10.0" layoutY="27.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" visible="false">
