@@ -13,6 +13,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -51,6 +52,7 @@ public class Controlleur {
 	private double positionTextY,positionTextapresdropY=0;
 	private Label newLabel= new Label();
 	private Pane currentPane;
+	private int cornerSize=13;
 	
 	@FXML
 	private Pane root;
@@ -87,12 +89,22 @@ public class Controlleur {
 
 	@FXML 
 	private Button buttonChangeText;
+	@FXML 
+	private Button buttonChangeShape;
 	@FXML
 	private Pane paneTextEdit;
+	@FXML
+	private Pane paneShapeEdit;
 	@FXML
 	private TextField textEdit;
 	@FXML
 	private Slider sliderTextSize;
+	@FXML
+	private Slider sliderCorner;
+	@FXML
+	private Slider sliderMargin;
+	@FXML
+	private Slider sliderOuterMargin;
 	@FXML
 	private ColorPicker colorPickerText;
 	@FXML
@@ -191,6 +203,8 @@ public class Controlleur {
 	private ImageView imageView4_Layout3;
 	@FXML 
 	private ImageView imageView5_Layout3;
+	@FXML
+	private Button buttonCloseShapeEdit;
 	
 	public Controlleur(){		
 		/*
@@ -227,7 +241,10 @@ public class Controlleur {
 		this.listFontFamilies = javafx.scene.text.Font.getFamilies();
 	}
 	
-	
+	/**
+	 * Permet de sauvegarder le cadre de photos réaliser par l'utilisateur
+	 * @param event
+	 */
 	@FXML
 	public void save (ActionEvent event){
 		
@@ -257,7 +274,7 @@ public class Controlleur {
 		
 		for(String s : this.listFontFamilies){
 			this.listViewFonts.setItems(FXCollections.observableList(this.listFontFamilies));
-		}
+		}		
 	}
 	
 	/*
@@ -296,20 +313,6 @@ public class Controlleur {
 	 }
 	 }
 	
-	/*
-	@FXML
-		
-		Button clickedLayout = (Button) e.getSource();
-		System.out.println("change layout to "+clickedLayout.getId().substring(clickedLayout.getId().indexOf("_")+1));
-		String layoutName = clickedLayout.getId().substring(clickedLayout.getId().indexOf("_")+1);
-		
-		//test pour un cas
-		this.pane_LayoutDef.setVisible(false);
-		this.pane2_Layout1.setVisible(true);
-		this.pane1_Layout1.setVisible(true);
-		}
-*/
-	
 	@FXML
 	public void changeTextColor(ActionEvent e){
 		this.textColor = this.colorPickerText.getValue();
@@ -322,29 +325,50 @@ public class Controlleur {
 	
 	@FXML
 	public void changeTextFont(MouseEvent e){
-		System.out.print("font changed !");
 		this.textFont = this.listViewFonts.getSelectionModel().getSelectedItem().toString();
 	}
 	
+	/**
+	 * Appelée lorsque l'utilisateur clique sur le bouton "Shape"
+	 * Affiche la fenetre d'édition des bordures du cadre
+	 * @param e
+	 */
+	@FXML
+	public void changeFrameShape(ActionEvent e){
+		this.paneShapeEdit.setVisible(true);
+	}
+	
+	/**
+	 * Appelée lorsque l'utilisateur clique sur le bouton "Texte"
+	 * Affiche la fenetre d'édition de texte
+	 * @param e
+	 */
 	@FXML
 	public void changeText(ActionEvent e){
 		this.paneTextEdit.setVisible(true);
 	}
 	
+	/**
+	 * Appelée lorsque l'utilisateur clique sur le bouton "Add" après avoir modifier son texte
+	 * Applique les transformations (choisies par l'utilisateur) au texte  
+	 * @param e
+	 */
 	@FXML
 	public void addText(ActionEvent e){
-		//Label newLabel = new Label(this.textEdit.getText());
 		newLabel.setText(this.textEdit.getText());
 		
 		newLabel.setStyle("-fx-font-size: "+this.textSize+"px;"); // mise à jour de la taille
 		
 		newLabel.setTextFill(this.textColor); // mise à jour de la couleur
 		
-		newLabel.setFont(Font.font(this.textFont));
+		newLabel.setFont(Font.font(this.textFont)); // mise à jour du Font
 		
-		this.currentPane.setVisible(true);
+		// puis on referme la fenetre d'édition et réaffiche le layout courant
+		this.currentPane.setVisible(true); 
 		this.paneTextEdit.setVisible(false);
-
+		
+		/****** Gestion du drag and drop du texte ajouté  *****/ 
+		
 		newLabel.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
@@ -396,6 +420,10 @@ public class Controlleur {
 		this.paneCadrePrincipalDefault.setBackground(background);
 		}
 	
+	/**
+	 *  Appelée lorsque l'utilisateur choisit d'afficher le layoutDefault (clique)
+	 * @param e
+	 */
 	@FXML
 	public void displayLayoutDefault(ActionEvent e){
 		this.currentPane = this.pane_LayoutDef;
@@ -406,6 +434,10 @@ public class Controlleur {
 		this.pane_Layout3.setVisible(false);
 	}
 	
+	/**
+	 *  Appelée lorsque l'utilisateur choisit d'afficher le layout1 (clique)
+	 * @param e
+	 */
 	@FXML
 	public void displayLayout1(ActionEvent e){
 		this.currentPane = this.pane_Layout1;
@@ -416,6 +448,10 @@ public class Controlleur {
 		this.pane_Layout3.setVisible(false);
 	}
 	
+	/**
+	 *  Appelée lorsque l'utilisateur choisit d'afficher le layout2 (clique)
+	 * @param e
+	 */
 	@FXML
 	public void displayLayout2(ActionEvent e){
 		this.currentPane = this.pane1_Layout2;
@@ -426,6 +462,10 @@ public class Controlleur {
 		this.pane_Layout3.setVisible(false);
 	}
 	
+	/**
+	 * Appelée lorsque l'utilisateur choisit d'afficher le layout3 (clique)
+	 * @param e
+	 */
 	@FXML
 	public void displayLayout3(ActionEvent e){
 		this.currentPane = this.pane1_Layout3;
@@ -436,14 +476,37 @@ public class Controlleur {
 		this.pane_Layout3.setVisible(true);
 	}
 	
+	/**
+	 * Ferme la fenetre qui permet d'ajouter un texte
+	 * @param e
+	 */
 	@FXML
 	public void closeTextEditWindow(ActionEvent e){
 		this.paneTextEdit.setVisible(false);
-		}
-	
-	
-	
+		}	
+
+/**
+ * Ferme la fenetre qui permet de parametrer les bordures
+ * @param e
+ */
+	@FXML
+	public void closeShapeEditWindow(ActionEvent e){
+		this.paneShapeEdit.setVisible(false);
+	}	
+
+	@FXML
+	public void changeCorner(MouseEvent e){
+		//récupérer les StackPane enfants de currentPane et appliquer : 
+		//setStyle("-fx-border-radius:"+this.sliderCorner.getValue()+"px");
+		//setStyle("-fx-background-radius:"+this.sliderCorner.getValue()+"px");
 	}
+	
+	@FXML
+	public void changeMargin(MouseEvent e){
+		//récupérer les StackPane enfants de currentPane et appliquer : 
+		//setStyle("-fx-border-width:"+this.sliderCorner.getValue()+"px");
+	}
+}
 
 
 

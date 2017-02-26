@@ -45,20 +45,8 @@
                         </CustomMenuItem>
                      </items>
                   </MenuButton>
-                  <MenuButton id="buttonShape" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="114.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_shape.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
-                     <items>
-                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
-                           <content>
-                              <CheckBox text="Click Me" />
-                           </content>
-                        </CustomMenuItem>
-                     </items>
-                  </MenuButton>
-                  <MenuButton id="buttonBackground" layoutX="133.0" layoutY="10.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_background.png); -fx-background-radius: 3px, 3px, 2px, 1px;">
-                     <graphic>
-                        <ColorPicker id="colorPickerBG" fx:id="colorPickerBG" onAction="#changeBackgroundColor" promptText="Background" style="-fx-background-color: black;" />
-                     </graphic>
-                  </MenuButton>
+                  <Button id="buttonChangeShape" fx:id="buttonChangeShape" layoutX="237.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeFrameShape" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                  <ColorPicker id="colorPickerBG" fx:id="colorPickerBG" onAction="#changeBackgroundColor" prefHeight="100.0" prefWidth="113.0" promptText="Background" style="-fx-background-image: url(/application/images/icones_buttons/icone_shape.png);" />
                   <Button id="buttonText" fx:id="buttonChangeText" mnemonicParsing="false" onAction="#changeText" prefHeight="100.0" prefWidth="113.0" style="-fx-background-image: url(/application/images/icones_buttons/icone_text.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                </children>
             </HBox>
@@ -70,7 +58,7 @@
          <children>
             <Pane id="pane_Layout1" fx:id="pane_Layout1" prefHeight="242.0" prefWidth="419.0" visible="false">
                <children>
-                  <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="246.0" prefWidth="416.0">
+                  <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="237.0" prefWidth="174.0">
                      <children>
                         <Pane id="pane1_Layout1" fx:id="pane1_Layout1" prefHeight="200.0" prefWidth="200.0" />
                         <Rectangle id="rectangle1Layout1" fx:id="rectangle1Layout1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="239.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
@@ -81,7 +69,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" prefHeight="246.0" prefWidth="416.0">
+                  <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" layoutX="243.0" prefHeight="240.0" prefWidth="173.0">
                      <children>
                         <Pane id="pane1_Layout1" fx:id="pane2_Layout1" prefHeight="200.0" prefWidth="200.0" />
                         <Rectangle id="rectangle2Layout1" fx:id="rectangle2Layout1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="240.0" stroke="BLACK" strokeType="INSIDE" width="176.0" />
@@ -96,7 +84,7 @@
             </Pane>
             <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="242.0" prefWidth="415.0">
                <children>
-                  <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" prefHeight="246.0" prefWidth="416.0">
+                  <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" layoutX="95.0" layoutY="20.0" prefHeight="203.0" prefWidth="196.0">
                      <children>
                         <Pane id="pane1_LayoutDef" fx:id="pane1_LayoutDef" prefHeight="200.0" prefWidth="200.0" />
                         <Rectangle id="rectangleLayoutDef" fx:id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
@@ -165,7 +153,7 @@
                         <ImageView id="imageView2_Layout2" fx:id="imageView2_Layout2" fitHeight="69.0" fitWidth="200.0" onMouseClicked="#clicked" pickOnBounds="true" />
                      </children>
                   </StackPane>
-                  <StackPane id="stackPane3_Layout2" fx:id="stackPane3_Layout2" alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="200.0">
+                  <StackPane id="stackPane3_Layout2" fx:id="stackPane3_Layout2" alignment="BOTTOM_RIGHT" layoutX="98.0" layoutY="94.0" prefHeight="106.0" prefWidth="102.0">
                      <children>
                         <Pane id="pane3_Layout2" fx:id="pane3_Layout2" prefHeight="200.0" prefWidth="200.0" />
                         <Polygon id="polyBasDroitLayout2" fx:id="polyBasDroitLayout2" fill="DODGERBLUE" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE">
@@ -397,6 +385,72 @@
                            </children>
                         </HBox>
                      </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane id="paneShapeEdit" fx:id="paneShapeEdit" layoutX="-17.0" layoutY="183.0" opacity="0.78" prefHeight="72.0" prefWidth="443.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <VBox prefHeight="74.0" prefWidth="396.0">
+                     <children>
+                        <HBox prefHeight="69.0" prefWidth="396.0">
+                           <children>
+                              <VBox prefHeight="165.0" prefWidth="91.0">
+                                 <children>
+                                    <Label text="corner:" textFill="#ed0935">
+                                       <VBox.margin>
+                                          <Insets bottom="3.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="47.0" text="margin:" textFill="#ed0935">
+                                       <VBox.margin>
+                                          <Insets bottom="3.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="115.0" text="outer margin:" textFill="#ed0935">
+                                       <VBox.margin>
+                                          <Insets bottom="3.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="165.0" prefWidth="137.0">
+                                 <children>
+                                    <Slider id="sliderCorner" fx:id="sliderCorner" blockIncrement="0.0" majorTickUnit="5.0" max="50.0" minorTickCount="0" onMouseClicked="#changeCorner" prefHeight="15.0" prefWidth="115.0" snapToTicks="true" value="15.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Slider>
+                                    <Slider id="sliderCorner" fx:id="sliderMargin" blockIncrement="0.0" majorTickUnit="5.0" max="50.0" minorTickCount="0" onMouseClicked="#changeTextSize" prefHeight="15.0" prefWidth="115.0" snapToTicks="true" value="15.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Slider>
+                                    <Slider id="sliderCorner" fx:id="sliderOuterMargin" blockIncrement="0.0" majorTickUnit="5.0" max="50.0" minorTickCount="0" onMouseClicked="#changeTextSize" prefHeight="15.0" prefWidth="115.0" snapToTicks="true" value="15.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Slider>
+                                 </children>
+                              </VBox>
+                              <Button id="buttonCloseShapeEdit" fx:id="buttonCloseShapeEdit" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#closeShapeEditWindow" text="close" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </VBox>
                </children>
             </Pane>
