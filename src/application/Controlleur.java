@@ -2,15 +2,20 @@ package application;
 
 
 
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPopupMenu;
 
 import javafx.collections.FXCollections;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ContextMenu;
@@ -20,7 +25,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -35,6 +42,9 @@ public class Controlleur {
 	private Color textColor=new Color(0, 0, 0, 0);
 	private List<String> listFontFamilies;
 	private String textFont;
+	private double positionTextX,positionTextapresdropX=0;
+	private double positionTextY,positionTextapresdropY=0;
+	private Label newLabel= new Label();
 	
 	@FXML
 	private Pane root;
@@ -79,6 +89,10 @@ public class Controlleur {
 	private Button buttonAddText;
 	@FXML
 	private ListView listViewFonts;
+	@FXML
+	private FileChooser fileChooser;
+	@FXML
+	private Button buttonSave;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -96,9 +110,16 @@ public class Controlleur {
 	                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
 	                new FileChooser.ExtensionFilter("PNG", "*.png")
 	            );
-			fileChooser.showOpenDialog(menuPic);
 			
-			// TODO Auto-generated method stub
+			 File file = fileChooser.showOpenDialog(null);
+             
+	            try {
+	                BufferedImage bufferedImage = ImageIO.read(file);
+	                Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+	                pic.setImage(image);
+	            } catch (IOException ex) {
+	     
+	            }
 			
 		}}
 	});
@@ -110,13 +131,40 @@ public class Controlleur {
 	}
 	
 	@FXML
+	public void save (ActionEvent event){
+		
+		SnapshotParameters parameters = new SnapshotParameters();
+		/**** A CHANGER to pane cadre principal !! */
+		WritableImage wi = new WritableImage((int) pane_LayoutDef.getWidth(),(int) pane_LayoutDef.getHeight());
+		WritableImage snapshot = pane_LayoutDef.snapshot(parameters, wi);
+		/******************/
+              
+		FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Image");
+	    //System.out.println(pic.getId());
+	    File file = fileChooser.showSaveDialog(null);if (file != null) {
+	    	try {
+	    		
+	    		ImageIO.write(SwingFXUtils.fromFXImage(snapshot,
+	                        null), "png", new File(file.getAbsolutePath()+".png"));
+	    	} catch (IOException ex) {
+	                    System.out.println(ex.getMessage());
+	    	}
+	    }
+	}
+	
+	@FXML
 	private void initialize(){
+		/***** A CHANGER to cadre principal ****/
+		this.stackPane_LayoutDef.getChildren().add(newLabel);
+		/*********************/
 		for(String s : this.listFontFamilies){
 			this.listViewFonts.setItems(FXCollections.observableList(this.listFontFamilies));
 		}
 
 	}
 	
+	/*
 	@FXML
 	public void clicked (MouseEvent e){
 		
@@ -125,6 +173,32 @@ public class Controlleur {
 		
 		
 		}
+		*/
+	
+	@FXML
+	public void clicked (MouseEvent e){
+		
+		 fileChooser= new FileChooser(); 
+			if (fileChooser!= null){
+			fileChooser.setTitle("Open Resource File");
+			
+			fileChooser.getExtensionFilters().addAll(
+	                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+	                new FileChooser.ExtensionFilter("PNG", "*.png")
+	            );
+			
+			 File file = fileChooser.showOpenDialog(null);
+          
+	            try {
+	                BufferedImage bufferedImage = ImageIO.read(file);
+	                Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+	                ImageView images=(ImageView) e.getSource();
+	                images.setImage(image);
+	            } catch (IOException ex) {
+	     
+	            }
+	 }
+	 }
 	
 	 
 	/**
@@ -133,6 +207,7 @@ public class Controlleur {
 	 */
 	@FXML
 	public void changeLayout(ActionEvent e){
+		/**** A CHANGER : mettre une methode par layout *******/
 		
 		Button clickedLayout = (Button) e.getSource();
 		System.out.println("change layout to "+clickedLayout.getId().substring(clickedLayout.getId().indexOf("_")+1));
@@ -167,7 +242,8 @@ public class Controlleur {
 	
 	@FXML
 	public void addText(ActionEvent e){
-		Label newLabel = new Label(this.textEdit.getText());
+		//Label newLabel = new Label(this.textEdit.getText());
+		newLabel.setText(this.textEdit.getText());
 		
 		newLabel.setStyle("-fx-font-size: "+this.textSize+"px;"); // mise à jour de la taille
 		
@@ -176,10 +252,46 @@ public class Controlleur {
 		newLabel.setFont(Font.font(this.textFont));
 		
 		/******* A CHANGER : ajouter le label au cadre/StackPane COURANT layout def ou layout1, 2 ..... ) ****/
-		this.stackPane_LayoutDef.getChildren().add(newLabel);
+		//this.stackPane_LayoutDef.getChildren().add(newLabel);
 		this.pane_LayoutDef.setVisible(true);
 		this.paneTextEdit.setVisible(false);
 		/************************************/
+		newLabel.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				
+				positionTextX=event.getSceneX();
+				positionTextY=event.getSceneY();
+				// TODO Auto-generated method stub
+				
+			}
+				});
+		newLabel.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				if(positionTextapresdropX-positionTextX+event.getSceneX() >stackPane_LayoutDef.getWidth()/2 || positionTextapresdropX-positionTextX+event.getSceneX() <-stackPane_LayoutDef.getWidth()/2
+						||positionTextapresdropY-positionTextY+event.getSceneY()>stackPane_LayoutDef.getHeight()/2 || positionTextapresdropY-positionTextY+event.getSceneY()<-stackPane_LayoutDef.getHeight()/2 )
+				{
+					return;
+				}
+				newLabel.setTranslateX(positionTextapresdropX-positionTextX+event.getSceneX());
+				newLabel.setTranslateY(positionTextapresdropY-positionTextY+event.getSceneY());
+				
+				
+			
+			}
+				});
+		newLabel.setOnMouseReleased(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				positionTextapresdropX=newLabel.getTranslateX();
+				positionTextapresdropY=newLabel.getTranslateY();
+				
+				
+			}
+				});
+
+		
 	}
 	
 	}

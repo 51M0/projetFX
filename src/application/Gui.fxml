@@ -404,10 +404,22 @@
       </Pane>
    </center>
    <top>
-      <Label id="labelTitre" text="Frame Magik" textAlignment="CENTER" textFill="#f5f2f2" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
+      <HBox prefHeight="28.0" prefWidth="454.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="buttonSave" fx:id="buttonSave" mnemonicParsing="false" onAction="#save" style="-fx-background-color: black;" text="Save" textFill="#fcf8f8">
+               <HBox.margin>
+                  <Insets left="10.0" right="70.0" />
+               </HBox.margin>
+            </Button>
+            <Label id="labelTitre" text="Frame Magik" textAlignment="CENTER" textFill="#f5f2f2">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </top>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
 </BorderPane>
