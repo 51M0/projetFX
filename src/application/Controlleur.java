@@ -80,6 +80,8 @@ public class Controlleur {
 	private Pane pane2_Layout1;
 	@FXML
 	private Pane pane_Layout3;
+	@FXML
+	private Button buttonCancel;
 	
 
 	@FXML 
@@ -430,6 +432,11 @@ public class Controlleur {
 		this.pane_Layout2.setVisible(false);
 		this.pane_Layout3.setVisible(true);
 	}
+	
+	@FXML
+	public void closeTextEditWindow(ActionEvent e){
+		this.paneTextEdit.setVisible(false);
+		}
 	
 	
 	

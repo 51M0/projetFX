@@ -94,12 +94,12 @@
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="242.0" prefWidth="415.0" visible="false">
+            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="242.0" prefWidth="415.0">
                <children>
                   <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" prefHeight="246.0" prefWidth="416.0">
                      <children>
                         <Pane id="pane1_LayoutDef" fx:id="pane1_LayoutDef" prefHeight="200.0" prefWidth="200.0" />
-                        <Rectangle id="rectangleLayoutDef" fx:id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <Rectangle id="rectangleLayoutDef" fx:id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
                         <ImageView id="imageView1_LayoutDef" fx:id="imageView1_LayoutDef" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
@@ -195,7 +195,7 @@
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="pane_Layout3" fx:id="pane_Layout3" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0">
+            <Pane id="pane_Layout3" fx:id="pane_Layout3" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
                   <BorderPane id="borderPane_Layout3" fx:id="borderPane_Layout3" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
                      <bottom>
@@ -378,13 +378,18 @@
                                     <Insets left="20.0" right="20.0" />
                                  </HBox.margin>
                               </Separator>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                              <VBox prefHeight="188.0" prefWidth="170.0">
                                  <children>
                                     <Label text="color:" textFill="#ed0935" />
                                     <ColorPicker id="colorPickerText" fx:id="colorPickerText" onAction="#changeTextColor" />
                                     <Button id="buttonAddText" fx:id="buttonAddText" alignment="CENTER" mnemonicParsing="false" onAction="#addText" text="Add !">
                                        <VBox.margin>
-                                          <Insets left="40.0" top="90.0" />
+                                          <Insets left="100.0" top="60.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button id="buttonAddText" fx:id="buttonCancel" alignment="CENTER" layoutX="50.0" layoutY="144.0" mnemonicParsing="false" onAction="#closeTextEditWindow" text="Cancel">
+                                       <VBox.margin>
+                                          <Insets left="100.0" top="5.0" />
                                        </VBox.margin>
                                     </Button>
                                  </children>
