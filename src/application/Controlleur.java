@@ -6,10 +6,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
 import javax.imageio.ImageIO;
 import javax.swing.JPopupMenu;
-
 import javafx.collections.FXCollections;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -80,6 +78,9 @@ public class Controlleur {
 	private Pane pane2_Layout1;
 	@FXML
 	private Pane pane1_Layout2;
+	@FXML
+	private Pane pane_Layout3;
+	
 
 	@FXML 
 	private Button buttonChangeText;
@@ -103,6 +104,8 @@ public class Controlleur {
 	private ColorPicker colorPickerBG;
 	@FXML
 	private Pane paneCadrePrincipalDefault;
+	@FXML
+	private Pane pane_Layout1;
 	
 	public Controlleur(){		
 		menuPic=new ContextMenu();
@@ -144,10 +147,8 @@ public class Controlleur {
 	public void save (ActionEvent event){
 		
 		SnapshotParameters parameters = new SnapshotParameters();
-		/**** A CHANGER to pane cadre principal !! */
-		WritableImage wi = new WritableImage((int) pane_LayoutDef.getWidth(),(int) pane_LayoutDef.getHeight());
-		WritableImage snapshot = pane_LayoutDef.snapshot(parameters, wi);
-		/******************/
+		WritableImage wi = new WritableImage((int) this.paneCadrePrincipalDefault.getWidth(),(int) this.paneCadrePrincipalDefault.getHeight());
+		WritableImage snapshot = this.paneCadrePrincipalDefault.snapshot(parameters, wi);
               
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save Image");
@@ -317,6 +318,40 @@ public class Controlleur {
 		Background background = new Background(backgroundFill);
 		this.paneCadrePrincipalDefault.setBackground(background);
 		}
+	
+	@FXML
+	public void displayLayoutDefault(ActionEvent e){
+		this.pane_LayoutDef.setVisible(true);
+		this.pane_Layout1.setVisible(false);
+		this.pane1_Layout2.setVisible(false);
+		this.pane_Layout3.setVisible(false);
+	}
+	
+	@FXML
+	public void displayLayout1(ActionEvent e){
+		this.pane_LayoutDef.setVisible(false);
+		this.pane_Layout1.setVisible(true);
+		this.pane1_Layout2.setVisible(false);
+		this.pane_Layout3.setVisible(false);
+	}
+	
+	@FXML
+	public void displayLayout2(ActionEvent e){
+		this.pane_LayoutDef.setVisible(false);
+		this.pane_Layout1.setVisible(false);
+		this.pane1_Layout2.setVisible(true);
+		this.pane_Layout3.setVisible(false);
+	}
+	
+	@FXML
+	public void displayLayout3(ActionEvent e){
+		this.pane_LayoutDef.setVisible(false);
+		this.pane_Layout1.setVisible(false);
+		this.pane1_Layout2.setVisible(false);
+		this.pane_Layout3.setVisible(true);
+	}
+	
+	
 	
 	}
 

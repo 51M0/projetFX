@@ -25,22 +25,22 @@
                      <items>
                         <CustomMenuItem id="menuItemLayout3" mnemonicParsing="false">
                            <content>
-                              <Button id="button_LayoutDef" fx:id="_button_LayoutDef" mnemonicParsing="false" onAction="#changeLayout" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_default.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                              <Button id="button_LayoutDef" fx:id="_button_LayoutDef" mnemonicParsing="false" onAction="#displayLayoutDefault" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_default.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                            </content>
                         </CustomMenuItem>
                         <CustomMenuItem id="menuItemLayout1" mnemonicParsing="false">
                            <content>
-                              <Button id="button_Layout1" fx:id="_button_Layout1" mnemonicParsing="false" onAction="#changeLayout" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_1.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                              <Button id="button_Layout1" fx:id="_button_Layout1" mnemonicParsing="false" onAction="#displayLayout1" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_1.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                            </content>
                         </CustomMenuItem>
                         <CustomMenuItem id="menuItemLayout2" mnemonicParsing="false">
                            <content>
-                              <Button id="button_Layout2" fx:id="_button_Layout2" mnemonicParsing="false" onAction="#changeLayout" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_2.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                              <Button id="button_Layout2" fx:id="_button_Layout2" mnemonicParsing="false" onAction="#displayLayout2" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_2.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                            </content>
                         </CustomMenuItem>
                         <CustomMenuItem id="menuItemLayout3" mnemonicParsing="false">
                            <content>
-                              <Button id="button_Layout3" fx:id="_button_Layout3" mnemonicParsing="false" onAction="#changeLayout" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_3.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
+                              <Button id="button_Layout3" fx:id="_button_Layout3" mnemonicParsing="false" onAction="#displayLayout3" prefHeight="100.0" prefWidth="100.0" style="-fx-background-image: url(/application/images/icones_buttons/layout_3.png); -fx-background-radius: 3px, 3px, 2px, 1px;" />
                            </content>
                         </CustomMenuItem>
                      </items>
@@ -68,43 +68,47 @@
    <center>
       <Pane id="paneCadrePrincipalDefault" fx:id="paneCadrePrincipalDefault" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="200.0" prefWidth="200.0">
+            <Pane id="pane_Layout1" fx:id="pane_Layout1" prefHeight="242.0" prefWidth="419.0" visible="false">
+               <children>
+                  <Pane id="pane_Layout1" fx:id="pane1_Layout1" prefHeight="242.0" prefWidth="414.0">
+                     <children>
+                        <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="246.0" prefWidth="416.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" />
+                              <Rectangle id="rectangle1Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                              <ImageView fx:id="pic1" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+                  <Pane id="pane2_Layout1" fx:id="pane2_Layout1" prefHeight="240.0" prefWidth="417.0">
+                     <children>
+                        <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" prefHeight="246.0" prefWidth="416.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" />
+                              <Rectangle id="rectangle2Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                              <ImageView fx:id="pic11" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane id="pane_LayoutDef" fx:id="pane_LayoutDef" prefHeight="242.0" prefWidth="415.0">
                <children>
                   <StackPane id="stackPane_LayoutDef" fx:id="stackPane_LayoutDef" prefHeight="246.0" prefWidth="416.0">
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0" />
                         <Rectangle id="rectangleLayoutDef" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
                         <ImageView fx:id="pic" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-               </children>
-            </Pane>
-            <Pane id="pane_Layout1" fx:id="pane1_Layout1" prefHeight="200.0" prefWidth="200.0" visible="false">
-               <children>
-                  <StackPane id="stackPane1_Layout1" fx:id="stackPane1_Layout1" alignment="TOP_LEFT" prefHeight="246.0" prefWidth="416.0">
-                     <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" />
-                        <Rectangle id="rectangle1Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                        <ImageView fx:id="pic1" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-               </children>
-            </Pane>
-            <Pane id="pane2_Layout1" fx:id="pane2_Layout1" prefHeight="200.0" prefWidth="200.0" visible="false">
-               <children>
-                  <StackPane id="stackPane2Layout1" fx:id="stackPane2_Layout1" alignment="TOP_RIGHT" prefHeight="246.0" prefWidth="416.0">
-                     <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" />
-                        <Rectangle id="rectangle2Layout1" arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                        <ImageView fx:id="pic11" fitHeight="199.0" fitWidth="212.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Pictures/android-logo-apple-inc-humor-funny-logos.jpg" />
                            </image>
@@ -216,7 +220,7 @@
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="pane1_Layout3" fx:id="pane1_Layout21" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+            <Pane id="pane1_Layout3" fx:id="pane_Layout3" layoutX="117.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
                   <StackPane id="stackPane1Layout3" fx:id="stackPane2_Layout111" alignment="BOTTOM_LEFT" layoutX="-1.0" layoutY="-1.0" prefHeight="203.0" prefWidth="202.0">
                      <children>
@@ -312,7 +316,7 @@
                   </StackPane>
                </children>
             </Pane>
-            <Pane id="paneTextEdit" fx:id="paneTextEdit" opacity="0.78" prefHeight="245.0" prefWidth="392.0" style="-fx-background-color: black;" visible="false">
+            <Pane id="paneTextEdit" fx:id="paneTextEdit" opacity="0.78" prefHeight="245.0" prefWidth="416.0" style="-fx-background-color: black;" visible="false">
                <children>
                   <VBox prefHeight="246.0" prefWidth="396.0">
                      <children>
